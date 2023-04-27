@@ -19,6 +19,8 @@ final class APICatFactsGetBreedsTests: XCTestCase {
         await XCTAssertThrowsError(try await getBreeds.query())
     }
     
+    /// This function is just a helper.  There are various safe unwrapping here for safety
+    /// which can mostly be ignored.  I'm just being overly cautious :)
     private func prepareSuccessResponse() throws -> (Data, URLResponse) {
         let expectedBreeds: [Breed] = SampleData.breeds
         let pagedResponse = API.CatFacts.GetBreeds.PagedResponse(data: expectedBreeds)
@@ -29,7 +31,7 @@ final class APICatFactsGetBreedsTests: XCTestCase {
     }
     
     func testGetBreedsReturnsValuesOnAPISuccess() async throws {
-        let (responseData, httpResponse) = try prepareSuccessResponse()
+        let (responseData, httpResponse) = try prepareSuccessResponse() // just get the data and urlResponse to send, this should never fail
         let apiSuccess: API.URLSessionDataAdapter = { _ in (responseData, httpResponse) }
         let getBreeds = API.CatFacts.GetBreeds(urlSessionDataAdapter: apiSuccess)
         let receivedBreeds = try await getBreeds.query()
