@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "75FC900A-2795-42C0-9058-B861FC677365",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SampleUrlAdapter.xcodeproj",
+      "identifier" : "78A6F65529FAEE6700EB7C8D",
+      "name" : "CatBreeds"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SampleUrlAdapter.xcodeproj",
+        "identifier" : "78A6F61F29FAE2D800EB7C8D",
+        "name" : "DomainLogicTests"
+      }
+    }
+  ],
+  "version" : 1
+}
